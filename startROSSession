@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 USERNAME=$(id -un)
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
-IMAGE=rishabh880/ros-docker
+IMAGE=rishabh880/ros-docker-trusty
 
 #echo "Starting the socat docker forwarding for gui windows"
 #socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" &
