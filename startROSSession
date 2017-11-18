@@ -23,4 +23,4 @@ sudo docker run -it --rm \
           		 --cap-add=ALL \
           		 --name ros-indigo-${USERNAME} \
           		 --expose=9090 \
-			 rishabh880/ros-docker
+			 rishabh880/ros-docker-trusty
