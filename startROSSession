@@ -5,6 +5,8 @@ USERNAME=$(id -un)
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 IMAGE=rishabh880/ros-docker-trusty
+ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+sudo xhost + $ip
 
 #echo "Starting the socat docker forwarding for gui windows"
 #socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" &
@@ -18,7 +20,7 @@ sudo docker run -it --rm \
           		 -v ${XSOCK}:${XSOCK}:rw \
           		 -v ${XAUTH}:${XAUTH}:rw \
           		 -e XAUTHORITY=${XAUTH} \
-        	  	 -e DISPLAY=192.168.65.2:0 \
+        	  	 -e DISPLAY=$ip:0 \
           		 -v /Users/${USERNAME}:/mnt/host_home \
           		 --cap-add=ALL \
           		 --name ros-indigo-${USERNAME} \
