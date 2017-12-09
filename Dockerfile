@@ -47,6 +47,7 @@ RUN rosdep update
 
 RUN sudo apt-get install -y ros-indigo-move-base \
 		            ros-indigo-rosserial \
+                            sudo apt-get install ros-indigo-ar-track-alvar \
                             binutils-dev \
                             libsdl1.2-dev \
                             libudev-dev \
