@@ -47,4 +47,8 @@ RUN rosdep update
 
 RUN sudo apt-get install -y ros-indigo-move-base \
 		            ros-indigo-rosserial \
-                            binutils-dev  
+                            binutils-dev \
+                            libsdl1.2-dev \
+                            libudev-dev \
+                            libiw-dev \
+                            daemontools 
